@@ -1,6 +1,8 @@
-chrome.tabs.onUpdated.addListener(function(tabId){
-    chrome.pageAction.show(tabId);
-})
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    if (tab.url.indexOf("https://lovelive-aqoursclub.jp/mob/cont/contLis.php") != -1) {
+        chrome.pageAction.show(tabId);
+    }
+});
 
 chrome.webRequest.onCompleted.addListener(
   function extractIndex (details) {
