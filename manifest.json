@@ -2,15 +2,23 @@
     "manifest_version": 2,
     "name": "club-downloader",
     "description": "某CLUB REPORTの保存用ffmpegコマンドを生成するChrome Extension",
-    "version": "0.0.1",
+    "version": "1.0.0",
+    "content_scripts": [
+        {
+            "matches": ["https://lovelive-aqoursclub.jp/mob/cont/contLis.php*"],
+            "js": ["js/content_script.js"],
+            "run_at": "document_end"
+        }
+    ],
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["js/background.js"]
     },
     "page_action": {
         "default_popup": "popup.html"
     },
     "permissions": [
         "webRequest",
-        "*://*/*"
+        "https://lovelive-aqoursclub.jp/*",
+        "https://dc.miovp.com/*"
     ]
 }

@@ -1,1 +1,29 @@
-<script type="text/javascript" src="popup.js"></script>
+<html>
+  <head>
+    <title>club-downloader</title>
+    <script type="text/javascript" src="js/popup.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <style type="text/css">
+      body {
+        width: 800px;
+      }
+      a.collection-item {
+        width: 800px;
+        font-size: 15px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display:inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper orange darken-1">
+        <span class="brand-logo left">ffmpeg commands</span>
+      </div>
+    </nav>                
+    <div id="list" class="collection"></div>      
+  </body> 
+</html>
