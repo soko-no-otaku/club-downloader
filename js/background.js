@@ -25,7 +25,7 @@ chrome.webRequest.onCompleted.addListener(
 );
 
 chrome.runtime.onMessage.addListener(
-	function (request) {
-		titleList = request.titles;
-	}
+    function (request) {
+        titleList = request.titles;
+    }
 );
