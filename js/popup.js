@@ -10,7 +10,8 @@ function makeList(m3u8List, titleList) {
         link.onclick = function () {
             var id = this.id;
             var message = "Copy this command and paste it into your terminal:";
-            var command = `ffmpeg -i '${m3u8List[id]}' -c copy '${titleList[id]}.ts'`;
+            var extension = (navigator.platform.indexOf("Win") != -1) ? ".exe" : "";
+            var command = `ffmpeg${extension} -i '${m3u8List[id]}' -c copy '${titleList[id]}.ts'`;
             window.prompt(message, command);
         }
 
