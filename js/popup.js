@@ -1,4 +1,4 @@
-function makeList(m3u8List, titleList) {
+function makeList(m3u8List, titleList, dateList) {
     var list = document.getElementById("list");
 
     for (i = 0; i < m3u8List.length; i++) {
@@ -11,7 +11,7 @@ function makeList(m3u8List, titleList) {
             var id = this.id;
             var message = "Copy this command and paste it into your terminal:";
             var extension = (navigator.platform.indexOf("Win") != -1) ? ".exe" : "";
-            var command = `ffmpeg${extension} -i '${m3u8List[id]}' -c copy '${titleList[id]}.ts'`;
+            var command = `ffmpeg${extension} -i '${m3u8List[id]}' -c copy '${dateList[id]}_${titleList[id]}.ts'`;
             window.prompt(message, command);
         }
 
@@ -27,6 +27,7 @@ window.onload = function () {
         return num_b - num_a;
     });
     var titleList = chrome.extension.getBackgroundPage().titleList;
+    var dateList = chrome.extension.getBackgroundPage().dateList;
 
-    makeList(m3u8List, titleList);
+    makeList(m3u8List, titleList, dateList);
 };

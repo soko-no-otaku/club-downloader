@@ -1,6 +1,7 @@
 function initializeLists() {
     m3u8List = [];
-    titleList = [];   
+    titleList = [];
+    dateList = [];
 }
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
@@ -26,6 +27,7 @@ chrome.webRequest.onCompleted.addListener(
 
 chrome.runtime.onMessage.addListener(
     function (request) {
-        titleList = request.titles;
+        titleList = request.t;
+        dateList = request.d;
     }
 );
