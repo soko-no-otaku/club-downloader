@@ -3,7 +3,8 @@ var dateList = [];
 
 document.querySelectorAll('div.item-info > h2 > a').forEach(
     function (node) {
-        titleList.push(node.text);
+        var title = node.text.trim();
+        titleList.push(title);
     }
 );
 document.querySelectorAll('div.item-info > p.item-date').forEach(
