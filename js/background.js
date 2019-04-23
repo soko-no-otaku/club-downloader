@@ -17,7 +17,7 @@ chrome.webRequest.onCompleted.addListener(
   function (details) {
       var url = details.url;
       var size = details.responseHeaders[9].value;
-      if (url.match(/index\.m3u8/) && size < 1600) {
+      if (url.match(/index\.m3u8/) && size < 1700) {
           m3u8List.push(url);
       }
   },
